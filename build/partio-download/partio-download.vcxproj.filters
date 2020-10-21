@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\cc07b22191bc10b06d438d6312aac7ad\partio-download-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\cc07b22191bc10b06d438d6312aac7ad\partio-download-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\cc07b22191bc10b06d438d6312aac7ad\partio-download-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\cc07b22191bc10b06d438d6312aac7ad\partio-download-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\cc07b22191bc10b06d438d6312aac7ad\partio-download-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\cc07b22191bc10b06d438d6312aac7ad\partio-download-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\cc07b22191bc10b06d438d6312aac7ad\partio-download-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\1aa73e770e3e519a4c4b3670c744dde0\partio-download-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\81c882e60414c073cffc7f84dd47b4a2\partio-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-download\CMakeFiles\partio-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3FF3E181-F4C4-3FCA-8881-518C04802525}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

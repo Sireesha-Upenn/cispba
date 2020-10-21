@@ -1,0 +1,152 @@
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\CC07B22191BC10B06D438D6312AAC7AD\PARTIO-DOWNLOAD-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-src"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-build"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/tmp"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-mkdir"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\CC07B22191BC10B06D438D6312AAC7AD\PARTIO-DOWNLOAD-DOWNLOAD.RULE
+setlocal
+cd "C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build"
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/tmp/partio-download-gitclone.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-download"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\CC07B22191BC10B06D438D6312AAC7AD\PARTIO-DOWNLOAD-PATCH.RULE
+setlocal
+cd "C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-src"
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Program Files/Git/cmd/git.exe apply C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/Deps/partio.patch
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-patch"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\CC07B22191BC10B06D438D6312AAC7AD\PARTIO-DOWNLOAD-CONFIGURE.RULE
+setlocal
+cd "C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-build"
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-configure"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\CC07B22191BC10B06D438D6312AAC7AD\PARTIO-DOWNLOAD-BUILD.RULE
+setlocal
+cd "C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-build"
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-build"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\CC07B22191BC10B06D438D6312AAC7AD\PARTIO-DOWNLOAD-INSTALL.RULE
+setlocal
+cd "C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-build"
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-install"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\CC07B22191BC10B06D438D6312AAC7AD\PARTIO-DOWNLOAD-TEST.RULE
+setlocal
+cd "C:\Users\psire\Documents\UPenn\Fall 2020\CIS 563\cispba\build\partio-build"
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-test"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\1AA73E770E3E519A4C4B3670C744DDE0\PARTIO-DOWNLOAD-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/Debug"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/Debug/partio-download-complete"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download-prefix/src/partio-download-stamp/Debug/partio-download-done"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\81C882E60414C073CFFC7F84DD47B4A2\PARTIO-DOWNLOAD.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download" "-BC:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download" --check-stamp-file "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

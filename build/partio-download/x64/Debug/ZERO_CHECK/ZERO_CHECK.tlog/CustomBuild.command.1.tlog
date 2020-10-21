@@ -1,0 +1,10 @@
+^C:\USERS\PSIRE\DOCUMENTS\UPENN\FALL 2020\CIS 563\CISPBA\BUILD\PARTIO-DOWNLOAD\CMAKEFILES\81C882E60414C073CFFC7F84DD47B4A2\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download" "-BC:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/partio-download.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

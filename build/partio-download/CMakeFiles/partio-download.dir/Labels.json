@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/partio-download"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/81c882e60414c073cffc7f84dd47b4a2/partio-download.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/1aa73e770e3e519a4c4b3670c744dde0/partio-download-complete.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/cc07b22191bc10b06d438d6312aac7ad/partio-download-install.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/cc07b22191bc10b06d438d6312aac7ad/partio-download-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/cc07b22191bc10b06d438d6312aac7ad/partio-download-download.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/cc07b22191bc10b06d438d6312aac7ad/partio-download-patch.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/cc07b22191bc10b06d438d6312aac7ad/partio-download-configure.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/cc07b22191bc10b06d438d6312aac7ad/partio-download-build.rule"
+		},
+		{
+			"file" : "C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/cc07b22191bc10b06d438d6312aac7ad/partio-download-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"partio-download"
+		],
+		"name" : "partio-download"
+	}
+}

@@ -1,0 +1,3 @@
+C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/partio-download.dir
+C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/ALL_BUILD.dir
+C:/Users/psire/Documents/UPenn/Fall 2020/CIS 563/cispba/build/partio-download/CMakeFiles/ZERO_CHECK.dir
