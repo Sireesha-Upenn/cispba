@@ -1,0 +1,3 @@
+/home/sireesha/cis563/cispba/Build/Release/partio-download/CMakeFiles/rebuild_cache.dir
+/home/sireesha/cis563/cispba/Build/Release/partio-download/CMakeFiles/edit_cache.dir
+/home/sireesha/cis563/cispba/Build/Release/partio-download/CMakeFiles/partio-download.dir

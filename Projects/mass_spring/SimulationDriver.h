@@ -37,10 +37,10 @@ public:
         std::string filename = output_folder + "/" + std::to_string(0) + ".poly";
         ms.dumpPoly(filename);
         for(int frame=1; frame<=max_frame; frame++) {
-            std::cout << "Frame " << frame << std::endl;
+            //std::cout << "Frame " << frame << std::endl;
             int N_substeps = (int)(((T)1/24)/dt);
             for (int step = 1; step <= N_substeps; step++) {
-                std::cout << "Step " << step << std::endl;
+                //std::cout << "Step " << step << std::endl;
                 helper(accumulate_t, dt);
                 advanceOneStepExplicitIntegration();
                 accumulate_t += dt;
@@ -50,7 +50,7 @@ public:
             mkdir(output_folder.c_str(), 0777);
             std::string filename = output_folder + "/" + std::to_string(frame) + ".poly";
             ms.dumpPoly(filename);
-            std::cout << std::endl;
+            //std::cout << std::endl;
         }
     }
 
@@ -62,5 +62,24 @@ public:
 	    ms.evaluateDampingForces(f_damping);
         
         // TODO: update position and velocity according to Newton's law.
+        //finding accelation and f * inverse mass 
+        //f = elastic force + damping force + gravity 
+        //accel = force at each node / mass of that node 
+        //v(n + 1) = v(n) + dt * f(n)
+
+        for(size_t i = 0; i < ms.x.size(); ++i)
+        {
+            if(!ms.node_is_fixed[i])
+            {
+                ms.v[i] += ((f_spring[i] + f_damping[i]) / ms.m[i] + gravity) * dt; 
+                ms.x[i] += ms.v[i] * dt; 
+            }
+            else
+            {
+                ms.v[i] = TV::Zero(); 
+            }
+            
+        }
+
     }
 };
