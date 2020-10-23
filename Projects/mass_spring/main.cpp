@@ -34,12 +34,6 @@ int main(int argc, char *argv[])
     T damping_coeff = 0;
     T dt = 0;
 
-    //3.
-    //Choose proper youngs_modulus, damping_coeff, dt;
-    youngs_modulus = T(5.3);
-    damping_coeff = T(2.5);
-    dt = T(0.0001);
-
     // node data
     std::vector<T> m;
     std::vector<TV> x;
@@ -275,6 +269,11 @@ int main(int argc, char *argv[])
 #endif
 
         //OKOKOKOKOKOKOK
+        //3.
+        //Choose proper youngs_modulus, damping_coeff, dt;
+        youngs_modulus = T(5.3);
+        damping_coeff = T(2.5);
+        dt = T(0.0001);
 
         //4.
         //Set boundary condition (node_is_fixed) and helper function (to achieve moving boundary condition).
@@ -326,23 +325,23 @@ int main(int argc, char *argv[])
         v.resize(num_points);
         m.resize(num_points);
 
-        std::vector<T> tempvals; 
+        std::vector<T> tempvals;
         while (!datafile.eof())
         {
-            T val; 
-            datafile >> val; 
-            tempvals.push_back(val); 
+            T val;
+            datafile >> val;
+            tempvals.push_back(val);
         }
         for (int count = 0; count < num_points; count++)
         {
             for (int dim = 0; dim < dimension; dim++)
-            {           
+            {
                 x[count][dim] = tempvals[(count * dimension) + dim];
-                //std::cout<<"X val entered was" <<x[count][dim]<<std::endl; 
+                //std::cout<<"X val entered was" <<x[count][dim]<<std::endl;
                 //std::cout<<"count is"<<count<<std::endl;
                 v[count][dim] = T(0);
             }
-             m[count] = total_mass / num_points; //Fill mass
+            m[count] = total_mass / num_points; //Fill mass
         }
 
         datafile.close();
@@ -375,17 +374,17 @@ int main(int argc, char *argv[])
         //Rest of the lines
         //Reading cells file data into input and pushing it back to celldata vector
         std::vector<int> indices;
-        //indices.resize(num_tetrahedrons * tetra_dimension); 
+        //indices.resize(num_tetrahedrons * tetra_dimension);
 
-       while (!cellsfile.eof())
+        while (!cellsfile.eof())
         {
-            int val; 
-            cellsfile >> val; 
-            indices.push_back(val); 
+            int val;
+            cellsfile >> val;
+            indices.push_back(val);
         }
         cellsfile.close(); //Close the file
 
-        //ALL GOOD UP TO HERE 
+        //ALL GOOD UP TO HERE
 
         //Fill in edges here from the data read from cells file
         //Each tetrahedron will have 6 edges
@@ -401,62 +400,57 @@ int main(int argc, char *argv[])
             alledges.insert(std::make_pair(indices[count + 2], indices[count + 3]));
             alledges.insert(std::make_pair(indices[count + 1], indices[count + 3]));
         }
-        
-        //Get rid of duplicate edges
-        for (size_t i = 0; i < alledges.size(); ++i)
-        {
-            //Current edge in all edges is toEnter
-            auto toEnter = alledges.find(i);
-            auto found = alledges.find(toEnter->second);
-            //deleting duplicate edges from alledges 
-            if (found->second == toEnter->first)
-            {
-                alledges.erase(i);
-            }
-            // if (found->second != toEnter->first)
-            // {
-            //     segments[seg_count][0] = toEnter->first;
-            //     segments[seg_count][1] = toEnter->second;
-            //     seg_count++;
-            // }
-        }
-        //Resize segments 
-        // segments.resize(alledges.size());
-        // for (size_t i = 0; i < alledges.size(); ++i)
-        // {
-        //     auto realedge = alledges.find(i); 
-        //     segments[seg_count][0] = realedge->first;
-        //     segments[seg_count][1] = realedge->second;
-        // }
 
+        //Get rid of duplicate edges
+        for (auto edge : alledges)
+        {
+            auto second = edge.second;
+            if (alledges.find(second) != alledges.end())
+            {
+                auto found = alledges.find(second);
+                if (edge.first == found->second)
+                {
+                    alledges.erase(edge.first);
+                }
+            }
+        }
+        //Resize segments
+        segments.resize(alledges.size());
+        int seg_count = 0;
+        for (auto edge : alledges)
+        {
+            segments[seg_count][0] = edge.first;
+            segments[seg_count][1] = edge.second;
+            seg_count++;
+        }
         //Fill in rest_length
-        // rest_length.resize(segments.size()); 
-        // for (size_t i = 0; i < segments.size(); i++)
-        // {
-        //     int p1 = segments[i][0];
-        //     int p2 = segments[i][1];
-        //     T len = (x[p1] - x[p2]).norm();
-        //     rest_length.push_back(len);
-        // }
+        rest_length.resize(segments.size());
+        for (size_t i = 0; i < segments.size(); i++)
+        {
+            int p1 = segments[i][0];
+            int p2 = segments[i][1];
+            T len = (x[p1] - x[p2]).norm();
+            rest_length.push_back(len);
+        }
 
         //Check if values are ok by printing them
-        // std::cout<<"Segment values are "<<std::endl;
-        // for(size_t i = 0; i < segments.size(); i++)
+        // std::cout << "Segment values are " << std::endl;
+        // for (size_t i = 0; i < segments.size(); i++)
         // {
-        //     std::cout<<"( "<<segments[i][0]<<" "<<segments[i][1]<<" )"<<std::endl;
+        //     std::cout << "( " << segments[i][0] << " " << segments[i][1] << " )" << std::endl;
         // }
 
-        // //3.
-        // //Choose proper youngs_modulus, damping_coeff, dt;
-        // // youngs_modulus = 5.3;
-        // // damping_coeff = 2.5;
-        // // dt = 0.0001;
+        //3.
+        //Choose proper youngs_modulus, damping_coeff, dt;
+        youngs_modulus = 5.3;
+        damping_coeff = 2.5;
+        dt = 0.0001;
 
         // //4.
         // //Set boundary condition (node_is_fixed) and helper function (to achieve moving boundary condition).
-        // node_is_fixed[2140] = true; //create a vector of length same as x
-        // node_is_fixed[2346] = true;
-        // node_is_fixed[1036] = true;
+        node_is_fixed[2140] = true; //create a vector of length same as x
+        node_is_fixed[2346] = true;
+        node_is_fixed[1036] = true;
 
         // TODO
         //called during simulation
