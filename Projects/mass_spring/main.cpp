@@ -85,16 +85,17 @@ int main(int argc, char *argv[])
         //initialize node_is_fixed to the size of x
         node_is_fixed.resize(total_points, false);
 
-        for(int i = 0; i < 64; ++i)
-        {
-            for(int j = 0; j < 64; ++j)
-            {
-                cout<<i<<" 0 "<<j<<std::endl; 
-                cout<<i<<" 0 "<<j + 1<<std::endl; 
-                cout<<i + 1<<" 0 "<<j<<std::endl; 
-                cout<<i + 1<<" 0 "<<j + 1<<std::endl; 
-            }
-        }
+        //CLOTH MESH OBJ??
+        // for(int i = 0; i < 64; ++i)
+        // {
+        //     for(int j = 0; j < 64; ++j)
+        //     {
+        //         cout<<i<<" 0 "<<j<<std::endl; 
+        //         cout<<i<<" 0 "<<j + 1<<std::endl; 
+        //         cout<<i + 1<<" 0 "<<j<<std::endl; 
+        //         cout<<i + 1<<" 0 "<<j + 1<<std::endl; 
+        //     }
+        // }
 
         //2.
         //Fill segments and rest_length, including struct springs, shearing springs and bending springs.
@@ -303,6 +304,11 @@ int main(int argc, char *argv[])
         //todo
         driver.helper = [&](T t, T dt) {
             //move the positions for fixed nodes
+            if(t > 3)
+            {
+                x[0][0] += 0.5; 
+                x[64][0] += 0.5;
+            }
         };
         driver.test = "cloth";
     }
