@@ -85,7 +85,16 @@ int main(int argc, char *argv[])
         //initialize node_is_fixed to the size of x
         node_is_fixed.resize(total_points, false);
 
-        //OK UNTIL HERE
+        for(int i = 0; i < 64; ++i)
+        {
+            for(int j = 0; j < 64; ++j)
+            {
+                cout<<i<<" 0 "<<j<<std::endl; 
+                cout<<i<<" 0 "<<j + 1<<std::endl; 
+                cout<<i + 1<<" 0 "<<j<<std::endl; 
+                cout<<i + 1<<" 0 "<<j + 1<<std::endl; 
+            }
+        }
 
         //2.
         //Fill segments and rest_length, including struct springs, shearing springs and bending springs.
@@ -442,9 +451,9 @@ int main(int argc, char *argv[])
 
         //3.
         //Choose proper youngs_modulus, damping_coeff, dt;
-        youngs_modulus = 5.3;
-        damping_coeff = 2.5;
-        dt = 0.0001;
+        youngs_modulus = T(2.5);
+        damping_coeff = T(1.3);
+        dt = T(0.00001);//further decrease it 
 
         // //4.
         // //Set boundary condition (node_is_fixed) and helper function (to achieve moving boundary condition).
@@ -458,6 +467,15 @@ int main(int argc, char *argv[])
             //modify the data time t
             //modify node_is_fixed
             //move the fixed fixed nodes in time
+            if(t > 4)
+            {
+                driver.ms.node_is_fixed[1036] = false; //release tail node 
+                node_is_fixed[1036] = false;
+                //x[idx]= (, , ); 
+                //driver.ms.x & v
+                //release tail at some time
+                //modify the node_isfixed for diver.ms 
+            }
         };
         driver.test = "bunny";
     }
