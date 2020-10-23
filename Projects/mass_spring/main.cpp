@@ -280,9 +280,9 @@ int main(int argc, char *argv[])
         //OKOKOKOKOKOKOK
         //3.
         //Choose proper youngs_modulus, damping_coeff, dt;
-        youngs_modulus = T(5.3);
-        damping_coeff = T(2.5);
-        dt = T(0.0001);
+        youngs_modulus = T(1.5);
+        damping_coeff = T(3.3);
+        dt = T(0.00001);//further decrease it 
 
         //4.
         //Set boundary condition (node_is_fixed) and helper function (to achieve moving boundary condition).
@@ -451,8 +451,8 @@ int main(int argc, char *argv[])
 
         //3.
         //Choose proper youngs_modulus, damping_coeff, dt;
-        youngs_modulus = T(2.5);
-        damping_coeff = T(1.3);
+        youngs_modulus = T(1.5);
+        damping_coeff = T(3.3);
         dt = T(0.00001);//further decrease it 
 
         // //4.
